@@ -25,6 +25,7 @@ const HeroSection = () => {
       name: "David Garcia",
     },
   ];
+  console.log("test");
 
   return (
     <section className="my-40 w-[95%] md:w-[70%] max-w-[1234px] mx-auto pt-10 text-sm md:text-base">
