@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-professional-blue: #3498db; /* Previously --profesional-blue */
-  --border-guide: rgb(255 255 255 / 9%);
+    --background: #ffffff;
+    --foreground: #171717;
+    --color-professional-blue: #3498db; /* Previously --profesional-blue */
+    --border-guide: rgb(255 255 255 / 9%);
 }
 
 @theme inline {
-  --color-background: #ffffff; /* Previously --background */
-  --color-foreground: #171717; /* Previously --foreground */
-  --color-navbar-background: #424242; /* Previously --navbar-background */
-  --color-primary: #2c3e50;
-  --color-professional-blue: #3498db; /* Previously --profesional-blue */
-  --color-premium-gold: #f1c40f; /* Previously --premium-gold */
-  --color-light-gray: #ecf0f1; /* Previously --light-gray */
-  --font-sans: var(--font-geist-sans); /* Unchanged, assuming defined elsewhere */
-  --font-mono: var(--font-geist-mono); /* Unchanged, assuming defined elsewhere */
+    --color-background: #ffffff; /* Previously --background */
+    --color-foreground: #171717; /* Previously --foreground */
+    --color-navbar-background: #424242; /* Previously --navbar-background */
+    --color-primary: #2c3e50;
+    --color-professional-blue: #3498db; /* Previously --profesional-blue */
+    --color-premium-gold: #f1c40f; /* Previously --premium-gold */
+    --color-light-gray: #ecf0f1; /* Previously --light-gray */
+    --font-sans: var(
+        --font-geist-sans
+    ); /* Unchanged, assuming defined elsewhere */
+    --font-mono: var(
+        --font-geist-mono
+    ); /* Unchanged, assuming defined elsewhere */
 }
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -26,126 +30,127 @@
 } */
 
 @layer components {
-  .border-guide {
-    border: 1px solid var(--border-guide);
-  }
-  .bg-hero {
-    background-image: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    @apply hover:opacity-80;
-  }
+    .border-guide {
+        border: 1px solid var(--border-guide);
+    }
+    .bg-hero {
+        background-image: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        @apply hover:opacity-80;
+    }
 
-  .btn-primary {
-    @apply grid place-items-center rounded-xl bg-[var(--color-professional-blue)] text-white px-4 outline-blue-500 hover:bg-[var(--color-primary)]/90;
-  }
-  .card {
-    @apply bg-[--color-background] text-[--color-foreground] p-6 rounded-lg shadow-md;
-  }
+    .btn-primary {
+        @apply grid place-items-center rounded-xl bg-[var(--color-professional-blue)] text-white px-4 outline-blue-500 hover:bg-[var(--color-primary)]/90;
+    }
+    .card {
+        @apply bg-[--color-background] text-[--color-foreground] p-6 rounded-lg shadow-md;
+    }
 }
 
 @layer utilities {
-  .bg-blue-500\/50 {
-    background-color: color-mix(
-      in oklab,
-      var(--color-blue-500) 10%,
-      transparent
-    );
-  }
+    .bg-blue-500\/50 {
+        background-color: color-mix(
+            in oklab,
+            var(--color-blue-500) 10%,
+            transparent
+        );
+    }
 }
 
 body {
-  text-rendering: optimizeLegibility;
-  background-color: #000;
-  scroll-padding-top: 64px;
-  color: #ffffff;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga" 1;
+    text-rendering: optimizeLegibility;
+    background-color: #000;
+    scroll-padding-top: 64px;
+    color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" 1;
+    @apply w-full;
 }
 
 .marquee {
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
 }
 
 .marquee__track {
-  display: flex;
-  gap: 2rem;
-  animation: marquee 15s linear infinite;
+    display: flex;
+    gap: 2rem;
+    animation: marquee 15s linear infinite;
 }
 
 .marquee:hover .marquee__track {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .cross-top-left::before,
 .cross-top-left::after {
-  content: "";
-  position: absolute;
-  background: #ac9f9f;
+    content: "";
+    position: absolute;
+    background: #ac9f9f;
 }
 
 .cross-top-left::before {
-  width: 24px;
-  height: 1px;
-  top: -1px;
-  left: -12px;
+    width: 24px;
+    height: 1px;
+    top: -1px;
+    left: -12px;
 }
 .cross-top-left::after {
-  width: 1px;
-  height: 24px;
-  top: -12px;
-  left: -1px;
+    width: 1px;
+    height: 24px;
+    top: -12px;
+    left: -1px;
 }
 
 .cross-top-right::before,
 .cross-top-right::after {
-  content: "";
-  position: absolute;
-  /* background: rgba(248, 241, 241, 0.3); */
-  background: #ac9f9f;
+    content: "";
+    position: absolute;
+    /* background: rgba(248, 241, 241, 0.3); */
+    background: #ac9f9f;
 }
 .cross-top-right::before {
-  width: 24px;
-  height: 1px;
-  top: -1px;
-  right: -12px;
+    width: 24px;
+    height: 1px;
+    top: -1px;
+    right: -12px;
 }
 .cross-top-right::after {
-  width: 1px;
-  height: 24px;
-  top: -12px;
-  right: -1px;
+    width: 1px;
+    height: 24px;
+    top: -12px;
+    right: -1px;
 }
 
 .cross-bottom-left::before,
 .cross-bottom-left::after {
-  content: "";
-  position: absolute;
-  background: #ac9f9f;
+    content: "";
+    position: absolute;
+    background: #ac9f9f;
 }
 .cross-bottom-left::before {
-  width: 24px;
-  height: 1px;
-  bottom: -1px;
-  left: -12px;
+    width: 24px;
+    height: 1px;
+    bottom: -1px;
+    left: -12px;
 }
 .cross-bottom-left::after {
-  width: 1px;
-  height: 24px;
-  bottom: -12px;
-  left: -1px;
+    width: 1px;
+    height: 24px;
+    bottom: -12px;
+    left: -1px;
 }

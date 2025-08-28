@@ -44,9 +44,9 @@ const Footer = () => {
     <div className=" w-full mx-auto border-t border-white/20 py-16">
       <footer className="backdrop-blur-2xl c/bg-gray-300/20 flex flex-col md:flex-row justify-between gap-6 w-[80%] mx-auto py-10">
         {/* LOGO */}
-        <div className="flex-1 ">
+        <div className="flex-1 self-center order-2">
           <Image src="/vercel.svg" alt="Logo" width={40} height={40} />
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-6 mt-4">
             {socials.map((social) => (
               <Link
                 key={social.name}
@@ -64,7 +64,7 @@ const Footer = () => {
           {/* Menu */}
           <div className="flex-1">
             <h3 className="font-bold mb-4">Support</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <Link href={"/"}>Home</Link>
               </li>
@@ -85,7 +85,7 @@ const Footer = () => {
           {/* Legal */}
           <div className="flex-1">
             <h3 className="font-bold mb-4">Legal</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
                 <Link href={"/privacy"}>Privacy Policy</Link>
               </li>
@@ -102,8 +102,8 @@ const Footer = () => {
           </div>
         </div>
         {/* News letter */}
-        <div className="flex-1 ">
-          <form className="flex flex-col gap-2 w-2/3 mx-auto">
+        <div className="flex-1">
+          <form className="flex flex-col gap-2 lg:w-2/3 mx-auto">
             <h3 className="font-bold mb-4">Newsletter</h3>
             <input
               type="email"
